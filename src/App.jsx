@@ -6,7 +6,8 @@ const App = () => {
   console.log(chocolates);
   return (
     <div>
-      hi
+      hiiii
+      <p></p>
     </div>
   );
 };
