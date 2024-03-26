@@ -6,7 +6,6 @@ import { GiChocolateBar } from "react-icons/gi";
 
 const App = () => {
   const chocolates = useLoaderData();
-  console.log(chocolates);
   return (
     <div className="bg-slate-100 ">
       <div className="w-[95%] pt-12 bg-white mx-auto">
