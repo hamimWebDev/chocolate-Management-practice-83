@@ -1,5 +1,6 @@
 import React from "react";
 import { FaArrowLeft } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 const AddChocolates = () => {
   const handleSubmit = (event) => {
@@ -34,16 +35,20 @@ const AddChocolates = () => {
   };
   return (
     <div className="h-auto bg-slate-200 flex justify-center items-center">
-      <div className="w-[90%] h-[900px] bg-white rounded-lg mt-12 mb-12">
+      <div className="w-[90%] h-[1000px] bg-white rounded-lg mt-12 mb-12">
         <div className="bg-yellow-950 p-5 w-[40%] mx-auto mt-12 rounded-lg">
           <h2 className="text-center text-white text-3xl font-semibold">
             Chocolate Management System
           </h2>
         </div>
-        <div className="mt-5 text-xl ml-[20%] flex items-center">
-          <FaArrowLeft className="text-gray-700 " />
-          <h5 className=" text-gray-700 font-semibold ml-3">All Chocolates</h5>
-        </div>
+        <Link to="/">
+          <div className="mt-5 text-xl ml-[20%] flex items-center">
+            <FaArrowLeft className="text-gray-700 " />
+            <h5 className=" text-gray-700 font-semibold ml-3">
+              All Chocolates
+            </h5>
+          </div>
+        </Link>
         <hr className="my-8 border-gray-400 border-solid border-t-2 mb-8 w-[60%] mx-auto " />
         <div className="w-[60%] h-auto mx-auto bg-slate-200 rounded-md">
           <h1 className="text-center text-2xl font-semibold text-black pt-10">
