@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import ChocolatesTable from "./components/ChocolatesTable/ChocolatesTable";
 import { FaPlus } from "react-icons/fa6";
 import { GiChocolateBar } from "react-icons/gi";
 
 const App = () => {
-  const chocolates = useLoaderData();
+  const loadedChocolates = useLoaderData();
+  const [chocolates, setChocolates] = useState(loadedChocolates);
   return (
     <div className="bg-slate-100 ">
       <div className="w-[95%] pt-12 bg-white mx-auto">
@@ -36,6 +37,8 @@ const App = () => {
             <ChocolatesTable
               key={chocolate._id}
               chocolate={chocolate}
+              chocolates={chocolates}
+              setChocolates={setChocolates}
             ></ChocolatesTable>
           ))}
         </div>

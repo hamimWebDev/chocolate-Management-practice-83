@@ -3,7 +3,7 @@ import { LuPencil } from "react-icons/lu";
 import { ImCross } from "react-icons/im";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
-const ChocolatesTable = ({ chocolate }) => {
+const ChocolatesTable = ({ chocolate, chocolates, setChocolates }) => {
   const { _id, name, country, image, category } = chocolate;
 
   const handleDelete = (_id) => {
@@ -30,6 +30,8 @@ const ChocolatesTable = ({ chocolate }) => {
                 text: "Your file has been deleted.",
                 icon: "success",
               });
+              const remaining = chocolates.filter((cho) => cho._id !== _id);
+              setChocolates(remaining);
             }
           });
       }
@@ -37,9 +39,9 @@ const ChocolatesTable = ({ chocolate }) => {
   };
   return (
     <div className="">
-      <tbody className="grid grid-cols-7 bg-white p-4  w-[70%] mx-auto mt-3 border-b-2 border-gray-500 text-lg">
+      <tbody className="grid grid-cols-7 bg-white p-4  w-[70%] mx-auto mt-3 border-b-2 border-gray-500 text-lg items-center">
         <tb className="mx-auto">
-          <img src={image} alt="" />
+          <img className="h-24 rounded-2xl" src={image} alt="" />
         </tb>
         <tb className="mx-auto col-span-2">{name}</tb>
         <tb className="mx-auto">{country}</tb>
