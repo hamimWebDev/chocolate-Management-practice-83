@@ -11,27 +11,36 @@ const AddChocolates = () => {
     const category = from.category.value;
     const image = from.image.value;
     const newChocolate = { name, country, image, category };
-    console.log(newChocolate);
-
-    fetch("http://localhost:5000/chocolates", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(newChocolate),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        if (data.insertedId) {
-          Swal.fire({
-            title: "Success",
-            text: "Do you want to continue",
-            icon: "success",
-            confirmButtonText: "Save",
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Save",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch("http://localhost:5000/chocolates", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(newChocolate),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.insertedId) {
+              Swal.fire({
+                title: "Success",
+                text: "Save Successfully",
+                icon: "success",
+              });
+            }
           });
-        }
-      });
+      }
+    });
   };
   return (
     <div className="h-auto bg-slate-200 flex justify-center items-center">
