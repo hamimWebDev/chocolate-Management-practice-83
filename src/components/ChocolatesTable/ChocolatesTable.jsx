@@ -41,7 +41,7 @@ const ChocolatesTable = ({ chocolate, chocolates, setChocolates }) => {
     <div className="">
       <tbody className="grid grid-cols-7 bg-white p-4  w-[70%] mx-auto mt-3 border-b-2 border-gray-500 text-lg items-center">
         <tb className="mx-auto">
-          <img className="h-24 rounded-2xl" src={image} alt="" />
+          <img className="h-28 rounded-2xl" src={image} alt="" />
         </tb>
         <tb className="mx-auto col-span-2">{name}</tb>
         <tb className="mx-auto">{country}</tb>
