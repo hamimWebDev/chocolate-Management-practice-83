@@ -48,7 +48,7 @@ const ChocolatesTable = ({ chocolate, chocolates, setChocolates }) => {
         <tb className="mx-auto">{category}</tb>
         <tb className="mx-auto col-span-2">
           <Link to={`/updateChocolates/${_id}`}>
-            <button className="p-4 bg-slate-100 rounded-md mr-3">
+            <button className="p-2 bg-slate-100 rounded-md mr-2">
               <LuPencil />
             </button>
           </Link>
